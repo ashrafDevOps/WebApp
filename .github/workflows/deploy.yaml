@@ -39,5 +39,7 @@ jobs:
           aws eks update-kubeconfig --region $AWS_REGION --name my-cluster
 
       - name: Deploy to EKS
+        shell: bash
         run: |
-         bash -c "kubectl apply -f deployment.yaml && kubectl apply -f service.yaml"
+          kubectl apply -f deployment.yaml
+          kubectl apply -f service.yaml
